@@ -3,13 +3,13 @@ import datetime as dt
 from src.typeDefs.rawOutagesCreationResp import RawOutagesCreationResp
 
 
-class ViewOutagesHandler():
+class ViewGenOutagesHandler():
     rawOutagesCreationUrl = ''
 
     def __init__(self, rawOutagesCreationUrl):
         self.rawOutagesCreationUrl = rawOutagesCreationUrl
 
-    def viewOutages(self, startDate: dt.datetime, endDate: dt.datetime) -> RawOutagesCreationResp:
+    def viewGenOutages(self, startDate: dt.datetime, endDate: dt.datetime) -> RawOutagesCreationResp:
         """create raw outages using the api service
 
         Args:
