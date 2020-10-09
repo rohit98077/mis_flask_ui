@@ -52,7 +52,7 @@ app.register_blueprint(weeklyReportsPage,url_prefix='/weeklyReports')
 
 
 @app.route('/viewGenOutages', methods=['GET', 'POST'])
-def viewOutages():
+def viewGenOutages():
     # in case of post request, create raw pair angles and return json response
     if request.method == 'POST':
         from_ = request.form.get('startDate')
@@ -64,7 +64,7 @@ def viewOutages():
     return render_template('viewGenOutages.html.j2')
 
 @app.route('/viewTrnasOutages', methods=['GET', 'POST'])
-def viewOutages():
+def viewTransOutages():
     # in case of post request, create raw pair angles and return json response
     if request.method == 'POST':
         from_ = request.form.get('startDate')
@@ -76,7 +76,7 @@ def viewOutages():
     return render_template('viewTransOutages.html.j2')
 
 @app.route('/viewLongOutages', methods=['GET', 'POST'])
-def viewOutages():
+def viewLongOutages():
     # in case of post request, create raw pair angles and return json response
     if request.method == 'POST':
         from_ = request.form.get('startDate')
