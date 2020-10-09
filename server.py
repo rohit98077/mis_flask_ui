@@ -63,7 +63,7 @@ def viewGenOutages():
     # in case of get request just return the html template
     return render_template('viewGenOutages.html.j2')
 
-@app.route('/viewTrnasOutages', methods=['GET', 'POST'])
+@app.route('/viewTransOutages', methods=['GET', 'POST'])
 def viewTransOutages():
     # in case of post request, create raw pair angles and return json response
     if request.method == 'POST':
