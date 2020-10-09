@@ -9,7 +9,7 @@ class ViewLongOutagesHandler():
     def __init__(self, rawOutagesCreationUrl):
         self.rawOutagesCreationUrl = rawOutagesCreationUrl
 
-    def viewLongOutages(self, startDate: dt.datetime, endDate: dt.datetime) -> RawOutagesCreationResp:
+    def viewLongOutages(self, startDate: dt.datetime, endDate: dt.datetime,outageType:str) -> RawOutagesCreationResp:
         """create raw outages using the api service
 
         Args:
@@ -19,7 +19,7 @@ class ViewLongOutagesHandler():
         Returns:
             RawOutagesCreationResp: Result of the raw outages creation operation
         """        
-        res = requests.get(self.rawOutagesCreationUrl,json={"startDate":startDate, "endDate":endDate})
+        res = requests.get(self.rawOutagesCreationUrl,json={"startDate":startDate, "endDate":endDate,"outageType":outageType})
 
         operationResult: RawOutagesCreationResp = {
             "isSuccess": False,

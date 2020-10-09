@@ -58,7 +58,7 @@ def viewOutages():
         from_ = request.form.get('startDate')
         to_ = request.form.get('endDate')
         outagesViewer = ViewGenOutagesHandler(appConfig['rawOutagesCreationServiceUrl2'])
-        resp = outagesViewer.viewGenOutages(from_,to_)
+        resp = outagesViewer.viewGenOutages(from_,to_,"Gen")
         return render_template('viewGenOutages.html.j2',data=resp['message'],isSuccess=resp['isSuccess'] )
     # in case of get request just return the html template
     return render_template('viewGenOutages.html.j2')
@@ -70,7 +70,7 @@ def viewOutages():
         from_ = request.form.get('startDate')
         to_ = request.form.get('endDate')
         outagesViewer = ViewTransOutagesHandler(appConfig['rawOutagesCreationServiceUrl2'])
-        resp = outagesViewer.viewTransOutages(from_,to_)
+        resp = outagesViewer.viewTransOutages(from_,to_,"Trans")
         return render_template('viewTransOutages.html.j2',data=resp['message'],isSuccess=resp['isSuccess'] )
     # in case of get request just return the html template
     return render_template('viewTransOutages.html.j2')
@@ -82,7 +82,7 @@ def viewOutages():
         from_ = request.form.get('startDate')
         to_ = request.form.get('endDate')
         outagesViewer = ViewLongOutagesHandler(appConfig['rawOutagesCreationServiceUrl2'])
-        resp = outagesViewer.viewLongOutages(from_,to_)
+        resp = outagesViewer.viewLongOutages(from_,to_,"Long")
         return render_template('viewLongOutages.html.j2',data=resp['message'],isSuccess=resp['isSuccess'] )
     # in case of get request just return the html template
     return render_template('viewLongOutages.html.j2')
